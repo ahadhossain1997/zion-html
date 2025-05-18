@@ -1593,6 +1593,7 @@ a.light-color {
 .zion-p-wrap {
   margin-bottom: 80px;
   transition: all 0.4s;
+  position: relative;
 }
 @media (max-width: 1399px) {
   .zion-p-wrap {
@@ -1612,6 +1613,20 @@ a.light-color {
 .zion-p-wrap:hover .zion-p-thumb img {
   transform: scale(1.1);
 }
+.zion-p-wrap:hover .zion-p-meta::before {
+  width: 100%;
+}
+.zion-p-wrap:hover .zion-portfolio-btn {
+  background-color: var(--accent-bg);
+  border: 1px solid transparent;
+}
+.zion-p-wrap:hover .zion-portfolio-btn i {
+  transform: translate(42px, -42px);
+  color: var(--heading-color) !important;
+}
+.zion-p-wrap:hover .zion-portfolio-btn::before {
+  transform: translate(-24px, 18px);
+}
 .zion-p-thumb {
   position: relative;
   border-radius: 10px;
@@ -1627,8 +1642,19 @@ a.light-color {
 .zion-p-meta {
   padding-top: 24px;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--heading-color);
+  position: relative !important;
+  border-bottom: 1px solid rgba(29, 29, 27, 0.1);
   margin-bottom: 24px;
+}
+.zion-p-meta::before {
+  content: " ";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  transition: all 0.4s;
+  background: var(--heading-color);
 }
 .zion-p-meta ul li {
   display: inline-block;
@@ -1659,10 +1685,6 @@ a.light-color {
   font-size: 18px;
   line-height: 1.44em;
   color: var(--heading-color);
-  transition: all 0.4s;
-}
-.zion-p-meta ul li a:hover {
-  color: var(--accent-bg);
 }
 .zion-p-content-wrap {
   display: flex;
@@ -1682,6 +1704,46 @@ a.light-color {
   .zion-p-btn {
     margin-top: 40px;
   }
+}
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.animation:nth-child(1) {
+  background: #b6916d;
+}
+
+.animation:nth-child(2) {
+  background: #bcb8ad;
+}
+
+.animation:nth-child(3) {
+  background: #b69187;
+}
+
+.animation:nth-child(4) {
+  background: #3c564f;
+}
+
+.reveal {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  max-width: 500px;
+  overflow: hidden;
+}
+.reveal img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: left;
 }
 
 .zion-faq-item {
@@ -2441,6 +2503,51 @@ textarea::placeholder { /* Most modern browsers support this now. */
     width: 100%;
     text-align: center;
     margin-top: 30px;
+  }
+}
+
+.zion-portfolio-btn {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  border: 1px solid #000;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+}
+.zion-portfolio-btn i {
+  font-size: 28px;
+  color: var(--heading-color);
+  transition: all 0.4s ease-in-out;
+}
+.zion-portfolio-btn:hover {
+  color: var(--heading-color);
+}
+.zion-portfolio-btn::before {
+  background-repeat: no-repeat;
+  position: absolute;
+  content: "\ea70";
+  right: -8px;
+  top: 0;
+  opacity: 1;
+  height: 100%;
+  font-size: 28px;
+  color: var(--heading-color);
+  font-family: remixicon !important;
+  transform: translate(-65px, 65px);
+  transition: all 0.2s linear 0s;
+}
+@media (max-width: 767px) {
+  .zion-portfolio-btn {
+    padding: 18px 30px;
   }
 }
 
