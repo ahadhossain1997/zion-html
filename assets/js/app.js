@@ -108,33 +108,73 @@
   });
 
   /*--------------------------------------------------------------
-  ZION  PORTFOLIO SLIDER JS INIT
-  --------------------------------------------------------------*/
-
-  var p_slider_data = $('.zion-t-slider-init');
-  if (p_slider_data.is_exist()) {
-    p_slider_data.slick({
-      slidesToShow: 3,
+   ZION CTA SLIDER JS INIT
+   --------------------------------------------------------------*/
+  var t_slider = $('.zion-cta-slider-init');
+  if (t_slider.is_exist()) {
+    t_slider.slick({
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 5000,
+      speed: 8000,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear',
-      responsive: [{
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 2
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1
-        }
-      }]
+      cssEase: 'linear'
     });
   }
+
+  /*--------------------------------------------------------------
+  ZION CTA SLIDER JS INIT
+  --------------------------------------------------------------*/
+  var t_slider2 = $('.zion-cta-slider-init2');
+  if (t_slider2.is_exist()) {
+    t_slider2.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 8000,
+      rtl: true,
+      arrows: false,
+      pauseOnHover: false,
+      cssEase: 'linear'
+    });
+  }
+  var $carousel = $('.slick').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: false,
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
+    responsive: [{
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2
+      }
+    }, {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }]
+  });
+
+  // Скролл
+  $(window).load(function () {
+    $(".mcs-horizontal").mCustomScrollbar({
+      axis: "x",
+      theme: "dark-thick",
+      autoExpandScrollbar: true,
+      advanced: {
+        autoExpandHorizontalScroll: true
+      },
+      updateOnContentResize: true,
+      scrollbarPosition: 'outside',
+      scrollInertia: 200
+    });
+  });
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
