@@ -18,8 +18,8 @@
 {
 --heading-color: rgba(29, 29, 27, 1);
 --heading-bg: rgba(29, 29, 27, 1);
---white-color: rgba(255, 255, 255, 1);
---white-bg: rgba(255, 255, 255, 1);
+--white-color: #fff;
+--white-bg: #fff;
 --accent-color: rgba(157, 248, 86, 1);
 --accent-bg: rgba(157, 248, 86, 1);
 --light-bg: rgba(246, 246, 246, 1);
@@ -1974,7 +1974,7 @@ a.light-color {
   justify-content: space-between;
 }
 .zion-service-content-title h3 {
-  color: var(--light-color1);
+  color: var(--white-color);
   transition: all 0.4s;
 }
 .zion-service-content-icon svg path {
@@ -1997,6 +1997,7 @@ a.light-color {
 }
 
 .zion-hero-content {
+  position: relative;
   padding: 210px 0 0;
 }
 @media (max-width: 1199px) {
@@ -2034,6 +2035,65 @@ a.light-color {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+.zion-hero-section2 {
+  position: relative;
+  z-index: 0;
+  margin-top: 80px;
+  padding: 130px 0 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.zion-hero-section2::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(29, 29, 27, 0) 0%, #1D1D1B 100%);
+}
+.zion-hero-content2 {
+  position: relative;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+.zion-hero-content2 h1 {
+  color: var(--white-color);
+}
+.zion-hero-data-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 130px;
+}
+@media (max-width: 991px) {
+  .zion-hero-data-wrap {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .zion-hero-data-wrap {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 575px) {
+  .zion-hero-data-wrap {
+    padding-top: 60px;
+  }
+}
+.zion-hero-data-item {
+  position: relative;
+  max-width: 310px;
+}
+.zion-hero-data-item.item2 {
+  max-width: 335px;
+  text-align: right;
+}
+.zion-hero-data-item h4 {
+  color: var(--white-color);
+}
 
 .zion-sub-title {
   padding: 10px 20px;
@@ -2057,21 +2117,21 @@ a.light-color {
   background-color: rgba(255, 255, 255, 0.05);
 }
 .zion-sub-title.title2 p {
-  color: var(--light-color1);
+  color: var(--white-color);
 }
 
-.zion-deafault-bg {
+.zion-default-bg {
   margin: 0 30px 30px;
   border-radius: 10px;
   background-color: var(--light-bg);
 }
 @media (max-width: 991px) {
-  .zion-deafault-bg {
+  .zion-default-bg {
     margin: 0 20px 20px;
   }
 }
 @media (max-width: 767px) {
-  .zion-deafault-bg {
+  .zion-default-bg {
     margin: 0 10px 10px;
   }
 }
@@ -2358,6 +2418,9 @@ textarea::placeholder { /* Most modern browsers support this now. */
 .zion-default-content p {
   font-size: 28px;
   line-height: 1.21em;
+}
+.zion-default-content.content2 h1, .zion-default-content.content2 h2, .zion-default-content.content2 h3, .zion-default-content.content2 h4, .zion-default-content.content2 p {
+  color: var(--white-color);
 }
 
 .title {
