@@ -1101,11 +1101,6 @@ ul.sub-menu li a:hover::before {
   right: auto;
   width: 100%;
 }
-@media (max-width: 991px) {
-  ul.sub-menu li a:hover::before {
-    display: none;
-  }
-}
 
 a.light-color {
   color: var(--light-color);
@@ -1278,10 +1273,33 @@ a.light-color {
     padding-top: 80px;
   }
 }
+@media (max-width: 1199px) {
+  .zion-footer-textarea {
+    max-width: 60%;
+  }
+}
 .zion-footer-menu-wraper {
   display: flex;
   float: inline-end;
   gap: 80px;
+}
+@media (max-width: 1199px) {
+  .zion-footer-menu-wraper {
+    float: inline-start;
+    gap: 100px;
+    padding-top: 80px;
+  }
+}
+@media (max-width: 991px) {
+  .zion-footer-menu-wraper {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .zion-footer-menu-wraper {
+    padding-top: 30px;
+    display: block;
+  }
 }
 .zion-footer-menu h4 {
   padding-bottom: 24px;
@@ -1294,6 +1312,35 @@ a.light-color {
 }
 .zion-footer-menu ul li a {
   color: var(--heading-color);
+  display: inline-block;
+  position: relative;
+  text-transform: capitalize;
+}
+.zion-footer-menu ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: auto;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--heading-color) !important;
+  transition: all 0.3s ease;
+}
+.zion-footer-menu ul li a:hover::before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .zion-footer-menu ul li a:hover::before {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .zion-footer-menu.menu2 {
+    padding-bottom: 30px;
+  }
 }
 .zion-footer-menu-wrap {
   display: flex;
@@ -1307,6 +1354,30 @@ a.light-color {
 }
 .zion-footer-column ul li a {
   color: var(--heading-color);
+  display: inline-block;
+  position: relative;
+  text-transform: capitalize;
+}
+.zion-footer-column ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: auto;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--heading-color) !important;
+  transition: all 0.3s ease;
+}
+.zion-footer-column ul li a:hover::before {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .zion-footer-column ul li a:hover::before {
+    display: none;
+  }
 }
 .zion-footer-bottom-wrap {
   display: flex;
@@ -1616,7 +1687,7 @@ a.light-color {
     margin-bottom: 30px;
   }
 }
-.zion-p-wrap:hover .zion-p-thumb img {
+.zion-p-wrap:hover .zion-p-thumbb img {
   transform: scale(1.1);
 }
 .zion-p-wrap:hover .zion-p-meta::before {
@@ -1634,16 +1705,17 @@ a.light-color {
   transform: translate(-24px, 18px);
 }
 .zion-p-thumb {
+  visibility: hidden;
   position: relative;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
 }
 .zion-p-thumb img {
-  border-radius: 10px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.4s;
+  border-radius: 10px;
+  transform-origin: left;
 }
 .zion-p-meta {
   padding-top: 24px;
@@ -1681,9 +1753,6 @@ a.light-color {
 .zion-p-meta ul li:last-child::before {
   content: none;
 }
-.zion-p-meta ul li:hover::before {
-  background-color: var(--accent-bg);
-}
 .zion-p-meta ul li:last-child {
   padding-right: 0;
 }
@@ -1710,46 +1779,6 @@ a.light-color {
   .zion-p-btn {
     margin-top: 40px;
   }
-}
-
-.animation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  position: relative;
-}
-
-.animation:nth-child(1) {
-  background: #b6916d;
-}
-
-.animation:nth-child(2) {
-  background: #bcb8ad;
-}
-
-.animation:nth-child(3) {
-  background: #b69187;
-}
-
-.animation:nth-child(4) {
-  background: #3c564f;
-}
-
-.reveal {
-  position: relative;
-  width: 80%;
-  height: 80%;
-  max-width: 500px;
-  overflow: hidden;
-}
-.reveal img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transform-origin: left;
 }
 
 .zion-faq-item {
@@ -1944,6 +1973,14 @@ a.light-color {
 }
 
 @media (max-width: 991px) {
+  .zion-title-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 991px) {
   .zion-service-content-wrap {
     padding-top: 40px;
   }
@@ -1976,8 +2013,13 @@ a.light-color {
 .zion-service-content-item:hover .zion-service-content-title h3 {
   color: var(--accent-color);
 }
-.zion-service-content-item:hover .zion-service-content-icon svg path {
-  fill: var(--accent-color);
+.zion-service-content-item:hover .zion-service-content-icon span .arry1 {
+  top: -15px;
+  left: 15px;
+}
+.zion-service-content-item:hover .zion-service-content-icon span .arry2 {
+  bottom: 0;
+  left: 0;
 }
 .zion-service-content-item:hover .zion-service-content-thumb img {
   transform: scale(1);
@@ -1993,9 +2035,6 @@ a.light-color {
 }
 .zion-service-content-title.title2 h3 {
   color: var(--heading-color);
-}
-.zion-service-content-icon svg path {
-  transition: all 0.4s;
 }
 .zion-service-content-thumb {
   position: absolute;
@@ -2598,6 +2637,11 @@ textarea::placeholder { /* Most modern browsers support this now. */
   justify-content: center;
   border-radius: 100px;
 }
+@media (max-width: 767px) {
+  .zion-portfolio-btn {
+    width: 50px;
+  }
+}
 .zion-portfolio-btn i {
   font-size: 28px;
   color: var(--heading-color);
@@ -2640,6 +2684,10 @@ textarea::placeholder { /* Most modern browsers support this now. */
   width: 14px;
   height: 14px;
 }
+.zion-service-content-icon span.icon2 {
+  width: 30px;
+  height: 30px;
+}
 .zion-service-content-icon span .arry1 {
   position: absolute;
   top: 0px;
@@ -2654,6 +2702,10 @@ textarea::placeholder { /* Most modern browsers support this now. */
   transition: 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93);
   color: var(--heading-color);
 }
+.zion-service-content-icon span .arry2.arry3 {
+  bottom: -30px;
+  left: -30px;
+}
 @media (max-width: 767px) {
   .zion-service-content-icon {
     padding: 18px 30px;
@@ -2662,12 +2714,10 @@ textarea::placeholder { /* Most modern browsers support this now. */
 .zion-service-content-icon:hover span .arry1 {
   top: -15px;
   left: 15px;
-  color: var(--heading-color);
 }
 .zion-service-content-icon:hover span .arry2 {
   bottom: 0;
   left: 0;
-  color: var(--heading-color);
 }
 
 .breadcrumb-wrapper {

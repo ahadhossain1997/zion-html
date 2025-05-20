@@ -188,6 +188,30 @@
       }
     });
   });
+  gsap.registerPlugin(ScrollTrigger);
+  var revealContainers = document.querySelectorAll(".zion-p-thumb");
+  revealContainers.forEach(function (container) {
+    var image = container.querySelector("img");
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        toggleActions: "restart none none reset"
+      }
+    });
+    tl.set(container, {
+      autoAlpha: 1
+    });
+    tl.from(container, 1.5, {
+      xPercent: -70,
+      ease: Power2.out
+    });
+    tl.from(image, 1.5, {
+      xPercent: 70,
+      scale: 1.3,
+      delay: -1.5,
+      ease: Power2.out
+    });
+  });
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
