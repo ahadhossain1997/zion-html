@@ -16,8 +16,8 @@
 **/
 :root
 {
---heading-color: rgba(29, 29, 27, 1);
---heading-bg: rgba(29, 29, 27, 1);
+--heading-color: #1D1D1B;
+--heading-bg: #1D1D1B;
 --white-color: #fff;
 --white-bg: #fff;
 --accent-color: rgba(157, 248, 86, 1);
@@ -1385,184 +1385,190 @@ a.light-color {
   top: 80px;
 }
 
-.zion-counter-wrap {
-  display: flex;
+/*================================================
+05. Funfacts css
+=================================================*/
+.zion-counter-wraper {
+  display: grid;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
+  gap: 115px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   padding-bottom: 130px;
 }
+@media (max-width: 1399px) {
+  .zion-counter-wraper {
+    gap: 40px;
+  }
+}
+@media (max-width: 1199px) {
+  .zion-counter-wraper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 @media (max-width: 991px) {
-  .zion-counter-wrap {
+  .zion-counter-wraper {
     padding-bottom: 100px;
   }
 }
 @media (max-width: 767px) {
-  .zion-counter-wrap {
+  .zion-counter-wraper {
+    gap: 30px;
     padding-bottom: 80px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
-.zion-counter-item p {
-  font-size: 28px;
-  line-height: 1.21em;
-  padding-top: 15px;
-}
-.zion-counter-data {
-  position: relative;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  height: 80px;
-}
-@media (max-width: 991px) {
-  .zion-counter-data {
-    height: 65px;
+@media (max-width: 575px) {
+  .zion-counter-wraper {
+    padding-bottom: 60px;
   }
 }
-@media (max-width: 767px) {
-  .zion-counter-data {
-    height: 50px;
-  }
-}
-.zion-counter-thumb {
-  text-align: center;
-  padding: 0 24px;
-}
-.zion-counter-thumb img {
-  width: 100%;
-}
-@media (max-width: 1399px) {
-  .zion-counter-thumb {
-    padding-left: 0;
-  }
-}
-@media (max-width: 991px) {
-  .zion-counter-thumb {
-    padding: 0 0 40px;
-    text-align: left;
-  }
-}
-.zion-counter-thumb img {
-  border-radius: 20px;
-}
-
-.zion-counter-data > span {
-  z-index: 1;
+.zion-counter-box {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: transform 2s ease;
-  transform: translateY(0);
-  line-height: 1;
+  align-items: flex-start;
+  position: relative;
 }
-
-.data2 > span {
-  width: 15%;
+.zion-counter-box::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  right: -70px;
+  width: 40px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgba(29, 29, 27, 0.1019607843);
 }
-@media (max-width: 1199px) {
-  .data2 > span {
-    width: 10%;
+@media (max-width: 1399px) {
+  .zion-counter-box::before {
+    display: none;
   }
 }
-
-.zion-counter-data > span span {
-  flex: 0 0 100%;
-  height: 100%;
+.zion-counter-box:last-child::before {
+  content: none;
+}
+@media (max-width: 1199px) {
+  .zion-counter-box {
+    align-items: center;
+  }
+}
+.zion-counter-data p {
+  font-size: 28px;
+  line-height: 1.21em;
+  padding-top: 8px;
 }
 
-.zion-counter-data:nth-child(1) > span {
-  transition-delay: 0s;
+.zion-counter-box .odometer-auto-theme {
+  line-height: 1;
+  vertical-align: unset;
 }
 
-.zion-counter-data:nth-child(2) > span {
-  transition-delay: 0.375s;
+.zion-counter-box .odometer-auto-theme .odometer-digit {
+  padding: 0 1px;
 }
 
-.zion-counter-data:nth-child(3) > span {
-  transition-delay: 0.75s;
+.zion-counter-box em {
+  font-style: normal;
 }
 
-.zion-counter-data:nth-child(4) > span {
-  transition-delay: 1.125s;
+.odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  position: relative;
 }
 
-.zion-counter-data:nth-child(5) > span {
-  transition-delay: 1.5s;
+.odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default .odometer-digit {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  position: relative;
 }
 
-.zion-counter-data:nth-child(6) > span {
-  transition-delay: 1.875s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer, .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  visibility: hidden;
 }
 
-.zion-counter-data:nth-child(7) > span {
-  transition-delay: 2.25s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
+  text-align: left;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
-.zion-counter-data:nth-child(8) > span {
-  transition-delay: 2.625s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
+  display: block;
 }
 
-.zion-counter-data:nth-child(9) > span {
-  transition-delay: 3s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
+  display: block;
+  -webkit-backface-visibility: hidden;
 }
 
-.zion-counter-data:nth-child(10) > span {
-  transition-delay: 3.375s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-default .odometer-digit .odometer-value {
+  display: block;
+  -webkit-transform: translateZ(0);
 }
 
-.zion-counter-data:nth-child(11) > span {
-  transition-delay: 3.75s;
+.odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value, .odometer.odometer-theme-default .odometer-digit .odometer-value.odometer-last-value {
+  position: absolute;
 }
 
-.zion-counter-data:nth-child(12) > span {
-  transition-delay: 4.125s;
+.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -ms-transition: -ms-transform 2s;
+  -o-transition: -o-transform 2s;
+  transition: transform 2s;
 }
 
-.zion-counter-data:nth-child(13) > span {
-  transition-delay: 4.5s;
+.odometer.odometer-auto-theme.odometer-animating-up.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
-.zion-counter-data:nth-child(14) > span {
-  transition-delay: 4.875s;
+.odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down .odometer-ribbon-inner {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
-.zion-counter-data:nth-child(15) > span {
-  transition-delay: 5.25s;
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
+  -webkit-transition: -webkit-transform 2s;
+  -moz-transition: -moz-transform 2s;
+  -ms-transition: -ms-transform 2s;
+  -o-transition: -o-transform 2s;
+  transition: transform 2s;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 
-.zion-counter-data:nth-child(16) > span {
-  transition-delay: 5.625s;
+.odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+  line-height: 1.1em;
 }
 
-.zion-counter-data:nth-child(17) > span {
-  transition-delay: 6s;
-}
-
-.zion-counter-data:nth-child(18) > span {
-  transition-delay: 6.375s;
-}
-
-.zion-counter-data:nth-child(19) > span {
-  transition-delay: 6.75s;
-}
-
-.zion-counter-data:nth-child(20) > span {
-  transition-delay: 7.125s;
-}
-
-.counter-card h2 {
-  color: var(--white-color);
-  font-size: 40px;
-  line-height: 48px;
-  height: 40px;
-}
-.counter-card span.text {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  padding-right: 12px;
-  color: var(--white-color);
+.odometer.odometer-auto-theme .odometer-value, .odometer.odometer-theme-default .odometer-value {
+  text-align: center;
 }
 
 .zion-p-wraper {
@@ -1959,6 +1965,14 @@ a.light-color {
   border-bottom: none;
   margin-bottom: 0;
 }
+.zion-service-content-item.item3 {
+  padding: 24px;
+  border-radius: 10px;
+  margin: 0;
+}
+.zion-service-content-item.item3:hover {
+  background-color: var(--heading-bg);
+}
 .zion-service-content-item:hover .zion-service-content-title h3 {
   color: var(--accent-color);
 }
@@ -1977,13 +1991,16 @@ a.light-color {
   color: var(--white-color);
   transition: all 0.4s;
 }
+.zion-service-content-title.title2 h3 {
+  color: var(--heading-color);
+}
 .zion-service-content-icon svg path {
   transition: all 0.4s;
 }
 .zion-service-content-thumb {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20%;
   z-index: 1;
 }
 .zion-service-content-thumb img {
@@ -2146,6 +2163,11 @@ a.light-color {
 @media (max-width: 767px) {
   .zion-about-content {
     padding-bottom: 80px;
+  }
+}
+@media (max-width: 575px) {
+  .zion-about-content {
+    padding-bottom: 60px;
   }
 }
 
@@ -2465,81 +2487,77 @@ textarea::placeholder { /* Most modern browsers support this now. */
   }
 }
 
-.zion-default-btn,
-#zion-submit-btn {
+.zion-default-btn {
   padding: 17px 32px;
   font-weight: 700;
   font-family: "Satoshi";
   border-radius: 50px;
-  width: fit-content;
-  z-index: 1;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  border: 1px solid var(--heading-color);
   display: inline-flex;
   align-items: center;
-  text-align: center;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  gap: 12px;
+  font-size: 18px;
+  line-height: 1.44em;
+  color: var(--heading-color) !important;
+  transition: all 0.4s ease;
+  width: max-content;
+  position: relative;
+}
+.zion-default-btn span {
   position: relative;
   overflow: hidden;
-  transform-style: preserve-3d;
-  color: var(--heading-color);
-  border: 1px solid var(--heading-color);
+  display: block;
+  width: 14px;
+  height: 14px;
 }
-.zion-default-btn i,
-#zion-submit-btn i {
-  font-size: 22px;
-  margin-left: 12px;
-  transition: all 0.4s ease-in-out;
-}
-.zion-default-btn:hover,
-#zion-submit-btn:hover {
-  color: var(--heading-color);
-}
-.zion-default-btn:hover i,
-#zion-submit-btn:hover i {
-  transform: translate(42px, -42px);
-  color: var(--heading-color);
-}
-.zion-default-btn::before,
-#zion-submit-btn::before {
-  background-repeat: no-repeat;
+.zion-default-btn span .arry1 {
   position: absolute;
-  content: "\ea70";
-  right: -8px;
-  top: 0;
-  opacity: 1;
-  height: 100%;
-  font-size: 22px;
-  font-family: remixicon !important;
-  transform: translate(-65px, 65px);
-  transition: all 0.2s linear 0s;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93);
+  color: var(--heading-color);
 }
-.zion-default-btn:hover::before,
-#zion-submit-btn:hover::before {
-  transform: translate(-40px, 18px);
+.zion-default-btn span .arry2 {
+  position: absolute;
+  bottom: -15px;
+  left: -17px;
+  transition: 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93);
+  color: var(--heading-color);
 }
 @media (max-width: 767px) {
-  .zion-default-btn,
-  #zion-submit-btn {
+  .zion-default-btn {
     padding: 18px 30px;
   }
 }
-.zion-default-btn.zion-header-btn,
-#zion-submit-btn.zion-header-btn {
+.zion-default-btn:hover {
+  background-color: var(--accent-bg);
+  border: 1px solid transparent;
+}
+.zion-default-btn:hover span .arry1 {
+  top: -15px;
+  left: 15px;
+  color: var(--heading-color);
+}
+.zion-default-btn:hover span .arry2 {
+  bottom: 0;
+  left: 0;
+  color: var(--heading-color);
+}
+.zion-default-btn.zion-header-btn {
   border: none;
   padding: 0;
   border-radius: 0;
+  background-color: #fff !important;
+}
+.zion-default-btn.zion-header-btn:hover {
+  background-color: none !important;
 }
 @media (max-width: 767px) {
-  .zion-default-btn.zion-header-btn,
-  #zion-submit-btn.zion-header-btn {
+  .zion-default-btn.zion-header-btn {
     display: none;
   }
 }
-.zion-default-btn.zion-header-btn::after,
-#zion-submit-btn.zion-header-btn::after {
+.zion-default-btn.zion-header-btn::before {
   content: "";
   position: absolute;
   width: 90px;
@@ -2548,16 +2566,10 @@ textarea::placeholder { /* Most modern browsers support this now. */
   left: 0;
   background-color: var(--heading-color);
 }
-.zion-default-btn.zion-header-btn:hover::before,
-#zion-submit-btn.zion-header-btn:hover::before {
-  transform: translate(-10px, 0px);
-}
-.zion-default-btn.d-block,
-#zion-submit-btn.d-block {
+.zion-default-btn.d-block {
   width: 100%;
 }
-.zion-default-btn:focus,
-#zion-submit-btn:focus {
+.zion-default-btn:focus {
   box-shadow: none;
 }
 
@@ -2612,6 +2624,50 @@ textarea::placeholder { /* Most modern browsers support this now. */
   .zion-portfolio-btn {
     padding: 18px 30px;
   }
+}
+
+.zion-service-content-icon {
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  width: max-content;
+  position: relative;
+}
+.zion-service-content-icon span {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+.zion-service-content-icon span .arry1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93);
+  color: var(--heading-color);
+}
+.zion-service-content-icon span .arry2 {
+  position: absolute;
+  bottom: -15px;
+  left: -17px;
+  transition: 0.3s cubic-bezier(0.37, 0.08, 0.02, 0.93);
+  color: var(--heading-color);
+}
+@media (max-width: 767px) {
+  .zion-service-content-icon {
+    padding: 18px 30px;
+  }
+}
+.zion-service-content-icon:hover span .arry1 {
+  top: -15px;
+  left: 15px;
+  color: var(--heading-color);
+}
+.zion-service-content-icon:hover span .arry2 {
+  bottom: 0;
+  left: 0;
+  color: var(--heading-color);
 }
 
 .breadcrumb-wrapper {

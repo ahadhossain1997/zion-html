@@ -175,6 +175,19 @@
       scrollInertia: 200
     });
   });
+
+  // Odometer Counter
+  $(".zion-counter-item").each(function () {
+    var $counterItem = $(this);
+    $counterItem.isInViewport(function (status) {
+      if (status === "entered") {
+        $counterItem.find(".odometer").each(function () {
+          var el = this;
+          el.innerHTML = el.getAttribute("data-odometer-final");
+        });
+      }
+    });
+  });
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
@@ -192,30 +205,3 @@
   }
   ;
 })(jQuery);
-
-// start gsap
-
-gsap.registerPlugin(ScrollTrigger);
-var revealContainers = document.querySelectorAll(".reveal");
-revealContainers.forEach(function (animation) {
-  var image = animation.querySelector("img");
-  var tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: animation,
-      toggleActions: "restart none none reset"
-    }
-  });
-  tl.set(animation, {
-    autoAlpha: 1
-  });
-  tl.from(animation, 1.5, {
-    xPercent: -100,
-    ease: Power2.out
-  });
-  tl.from(image, 1.5, {
-    xPercent: 100,
-    scale: 1.3,
-    delay: -1.5,
-    ease: Power2.out
-  });
-});
