@@ -117,7 +117,7 @@
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 8000,
+      speed: 13000,
       arrows: false,
       pauseOnHover: false,
       cssEase: 'linear'
@@ -134,7 +134,7 @@
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 8000,
+      speed: 13000,
       rtl: true,
       arrows: false,
       pauseOnHover: false,

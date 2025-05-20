@@ -1781,6 +1781,29 @@ a.light-color {
   }
 }
 
+.zion-cta-slider-inits {
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
+}
 .zion-faq-item {
   margin-bottom: 24px;
   background-color: var(--light-color2);
@@ -2003,12 +2026,14 @@ a.light-color {
   margin-bottom: 0;
 }
 .zion-service-content-item.item3 {
-  padding: 24px;
-  border-radius: 10px;
-  margin: 0;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(29, 29, 27, 0.1019607843);
 }
-.zion-service-content-item.item3:hover {
-  background-color: var(--heading-bg);
+.zion-service-content-item.item3.item4 {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
 }
 .zion-service-content-item:hover .zion-service-content-title h3 {
   color: var(--accent-color);
@@ -2024,8 +2049,14 @@ a.light-color {
 .zion-service-content-item:hover .zion-service-content-thumb img {
   transform: scale(1);
 }
+.zion-service-content-item:hover .zion-service-content-wraper {
+  border-radius: 10px;
+  padding: 24px;
+  background-color: var(--heading-bg);
+}
 .zion-service-content-wraper {
   display: flex;
+  transition: all 0.4s;
   align-items: center;
   justify-content: space-between;
 }
