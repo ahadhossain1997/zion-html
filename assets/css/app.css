@@ -690,6 +690,9 @@ img {
     padding: 20px 0;
   }
 }
+.zion-header-section.section2 {
+  padding: 15px 0;
+}
 
 header.hide-header {
   transform: translateY(-100%);
@@ -850,109 +853,6 @@ a.zion-header-info img {
   color: var(--body-color);
 }
 
-.zion-sidemenu-wraper {
-  position: relative;
-}
-
-.zion-sidemenu-column {
-  width: 400px;
-  display: block;
-  height: 100%;
-  position: fixed;
-  z-index: 111;
-  padding: 30px;
-  margin-right: -440px;
-  transition: 0.5s;
-  right: 0;
-  top: 0;
-  padding-top: 70px;
-  overflow-y: scroll;
-  background-color: var(--white-bg);
-}
-
-.zion-sidemenu-thumb {
-  margin: 30px 0;
-}
-.zion-sidemenu-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.zion-sidemenu-column.active {
-  margin-right: 0px;
-  z-index: 9999;
-}
-
-.zion-sidemenu-close {
-  position: absolute;
-  left: 0;
-  top: 0;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--accent-bg);
-}
-.zion-sidemenu-close i {
-  font-size: 30px;
-  color: var(--white-color);
-  transition: all 0.4s;
-}
-
-.active .zion-sidemenu-close {
-  opacity: 1;
-  visibility: visible;
-}
-
-.offcanvas-overlay {
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  position: fixed;
-  z-index: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
-}
-
-.offcanvas-overlay.active {
-  opacity: 0.7;
-  z-index: 111;
-  visibility: visible;
-}
-
-.zion-sidemenu-logo {
-  margin-bottom: 30px;
-}
-.zion-sidemenu-logo img {
-  width: 70%;
-}
-
-.zion-sidemenu-column::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #F5F5F5;
-}
-
-.zion-sidemenu-column::-webkit-scrollbar {
-  width: 5px;
-  background-color: #F5F5F5;
-}
-
-.zion-sidemenu-column::-webkit-scrollbar-thumb {
-  background-color: #000000;
-  border: 2px solid #555555;
-}
-
-@media (max-width: 767px) {
-  .zion-sidemenu-wraper {
-    display: none;
-  }
-}
 .main-menu a {
   color: var(--heading-color);
   font-weight: 400;
@@ -1258,6 +1158,116 @@ a.light-color {
 
 .header-logo {
   text-align: left;
+}
+
+.zion-header-barger {
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: 1px solid;
+}
+@media (max-width: 767px) {
+  .zion-header-barger {
+    display: none;
+  }
+}
+.zion-header-barger span {
+  height: 3px;
+  width: 24px;
+  margin: 3px 0;
+  display: block;
+  position: relative;
+  background-color: var(--heading-bg);
+}
+.zion-header-barger span:before {
+  content: "";
+  top: -8px;
+  right: 0;
+  width: 24px;
+  height: 3px;
+  transition: all 0.4s;
+  position: absolute;
+  background-color: var(--heading-bg);
+}
+.zion-header-barger span::after {
+  content: "";
+  bottom: -8px;
+  width: 24px;
+  height: 3px;
+  right: 0;
+  position: absolute;
+  transition: all 0.4s;
+  background-color: var(--heading-bg);
+}
+
+.zion-sidemenu-wraper {
+  position: relative;
+}
+
+.zion-sidemenu-column {
+  width: 800px;
+  display: block;
+  height: 100%;
+  position: fixed;
+  z-index: 111;
+  padding: 120px 0 120px 110px;
+  margin-right: -800px;
+  transition: 0.5s;
+  right: 0;
+  top: 0;
+  padding-top: 70px;
+  background-color: var(--accent-bg);
+}
+
+.zion-sidemenu-column.active {
+  margin-right: 0px;
+  z-index: 9999;
+}
+
+.zion-sidemenu-close {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid;
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.zion-sidemenu-close i {
+  font-size: 35px;
+  color: var(--heading-color);
+  transition: all 0.4s;
+}
+
+.active .zion-sidemenu-close {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .zion-sidemenu-wraper {
+    display: none;
+  }
+}
+.header-close-btn p {
+  font-size: 18px;
+  line-height: 1.44em;
+  font-weight: 700;
+}
+
+.zion-sidemenu-wrap ul li {
+  margin-bottom: 24px;
+}
+.zion-sidemenu-wrap ul li:last-child {
+  margin-bottom: 0;
 }
 
 .zion-footer-section {

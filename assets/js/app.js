@@ -186,7 +186,7 @@
   });
 
   /*--------------------------------------------------------------
-  ZION INTEGRATION JS INIT
+  ZION BRAND JS INIT
   --------------------------------------------------------------*/
 
   var i_slider_data = $('.zion-brand-slider-js-init');
@@ -236,6 +236,17 @@
     live: true
   });
   wow.init();
+
+  /*--------------------------------------------------------------
+  TEKUP MENU SIDEBAR JS INIT
+  --------------------------------------------------------------*/
+  $(".zion-header-barger").on("click", function (e) {
+    $(".zion-sidemenu-column, .offcanvas-overlay").addClass("active");
+    event.preventDefault(e);
+  });
+  $(".zion-sidemenu-close, .offcanvas-overlay").on("click", function () {
+    $(".zion-sidemenu-column, .offcanvas-overlay").removeClass("active");
+  });
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
