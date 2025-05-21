@@ -141,7 +141,7 @@
       cssEase: 'linear'
     });
   }
-  var $carousel = $('.slick').slick({
+  var $carousel = $('.slick-slide-active').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
@@ -159,34 +159,6 @@
         slidesToShow: 1
       }
     }]
-  });
-
-  // Скролл
-  $(window).load(function () {
-    $(".mcs-horizontal").mCustomScrollbar({
-      axis: "x",
-      theme: "dark-thick",
-      autoExpandScrollbar: true,
-      advanced: {
-        autoExpandHorizontalScroll: true
-      },
-      updateOnContentResize: true,
-      scrollbarPosition: 'outside',
-      scrollInertia: 200
-    });
-  });
-
-  // Odometer Counter
-  $(".zion-counter-item").each(function () {
-    var $counterItem = $(this);
-    $counterItem.isInViewport(function (status) {
-      if (status === "entered") {
-        $counterItem.find(".odometer").each(function () {
-          var el = this;
-          el.innerHTML = el.getAttribute("data-odometer-final");
-        });
-      }
-    });
   });
   gsap.registerPlugin(ScrollTrigger);
   var revealContainers = document.querySelectorAll(".zion-p-thumb");
@@ -212,6 +184,58 @@
       ease: Power2.out
     });
   });
+
+  /*--------------------------------------------------------------
+  ZION INTEGRATION JS INIT
+  --------------------------------------------------------------*/
+
+  var i_slider_data = $('.zion-brand-slider-js-init');
+  if (i_slider_data.is_exist()) {
+    i_slider_data.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 3000,
+      arrows: false,
+      pauseOnHover: false,
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  }
+  var i_slider_data = $('.zion-brand-slider-js-init2');
+  if (i_slider_data.is_exist()) {
+    i_slider_data.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 3000,
+      arrows: false,
+      rtl: true,
+      pauseOnHover: false,
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  }
+  var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: false,
+    live: true
+  });
+  wow.init();
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
@@ -219,6 +243,17 @@
   =============================================*/
   $(window).on("load", function () {
     preloader();
+    $(".mcs-horizontal").mCustomScrollbar({
+      axis: "x",
+      theme: "dark-thick",
+      autoExpandScrollbar: true,
+      advanced: {
+        autoExpandHorizontalScroll: true
+      },
+      updateOnContentResize: true,
+      scrollbarPosition: 'outside',
+      scrollInertia: 200
+    });
   });
 
   /*===========================================
