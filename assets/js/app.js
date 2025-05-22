@@ -247,6 +247,27 @@
   $(".zion-sidemenu-close, .offcanvas-overlay").on("click", function () {
     $(".zion-sidemenu-column, .offcanvas-overlay").removeClass("active");
   });
+
+  // img expand
+
+  var wrappers = document.querySelectorAll(".zion-p-img-expand-wrap");
+  var wrapArray = Array.from(wrappers);
+  wrapArray.forEach(function (item) {
+    var text = item.childNodes[1];
+    item.addEventListener("mouseover", function () {
+      wrapArray.filter(function (others) {
+        if (others !== item) {
+          others.classList.remove("expand");
+        }
+      });
+      this.classList.add("expand");
+      text.classList.add('active');
+    });
+    item.addEventListener("mouseout", function () {
+      this.classList.remove("expand");
+      text.classList.remove('active');
+    });
+  });
   $(window).on("resize", function () {}); // end window resize
 
   /*===========================================
