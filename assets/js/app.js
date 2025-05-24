@@ -208,6 +208,16 @@
       }]
     });
   }
+  /*--------------------------------------------------------------
+  ZION TAB SLIDER JS INIT
+  --------------------------------------------------------------*/
+  $('ul.tabs li').click(function () {
+    var tab_id = $(this).attr('data-tab');
+    $('ul.tabs li').removeClass('current');
+    $('.zion-tab-content').removeClass('current');
+    $(this).addClass('current');
+    $("#" + tab_id).addClass('current');
+  });
   var i_slider_data = $('.zion-brand-slider-js-init2');
   if (i_slider_data.is_exist()) {
     i_slider_data.slick({
@@ -228,6 +238,10 @@
       }]
     });
   }
+
+  /*--------------------------------------------------------------
+  ZION WOW JS INIT
+  --------------------------------------------------------------*/
   var wow = new WOW({
     boxClass: 'wow',
     animateClass: 'animated',
@@ -287,6 +301,19 @@
       scrollInertia: 200
     });
   });
+  var t_slider = $('.zion-t-slider-init2');
+  if (t_slider.is_exist()) {
+    t_slider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: false,
+      arrows: false,
+      dots: true,
+      infinite: false,
+      speed: 1000,
+      lazyLoad: 'progressive'
+    });
+  }
 
   /*===========================================
       =    Preloader      =
