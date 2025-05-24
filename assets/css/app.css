@@ -2151,6 +2151,11 @@ a.light-color {
 .zion-team-content p {
   color: var(--heading-color);
 }
+.zion-team-wraper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
 .zion-blog-wrap {
   transition: all 0.4s;
@@ -2998,6 +3003,21 @@ textarea::placeholder { /* Most modern browsers support this now. */
 }
 .zion-default-content.content2 h1, .zion-default-content.content2 h2, .zion-default-content.content2 h3, .zion-default-content.content2 h4, .zion-default-content.content2 p {
   color: var(--white-color);
+}
+.zion-default-content.team3 {
+  padding: 130px 0;
+  position: sticky;
+  top: 100px;
+}
+@media (max-width: 991px) {
+  .zion-default-content.team3 {
+    padding: 100px 0;
+  }
+}
+@media (max-width: 767px) {
+  .zion-default-content.team3 {
+    padding: 80px 0;
+  }
 }
 
 .title {
