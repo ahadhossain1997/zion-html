@@ -120,7 +120,18 @@
       speed: 13000,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear'
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          speed: 8000 // override speed at this breakpoint
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          speed: 5000 // another override
+        }
+      }]
     });
   }
 
@@ -138,7 +149,18 @@
       rtl: true,
       arrows: false,
       pauseOnHover: false,
-      cssEase: 'linear'
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 1024,
+        settings: {
+          speed: 8000 // override speed at this breakpoint
+        }
+      }, {
+        breakpoint: 600,
+        settings: {
+          speed: 5000 // another override
+        }
+      }]
     });
   }
   var $carousel = $('.slick-slide-active').slick({
