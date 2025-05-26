@@ -1,5 +1,9 @@
 "use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 (function ($) {
   "use strict";
 
@@ -277,11 +281,11 @@
   TEKUP MENU SIDEBAR JS INIT
   --------------------------------------------------------------*/
   $(".zion-header-barger").on("click", function (e) {
-    $(".zion-sidemenu-column, .offcanvas-overlay").addClass("active");
+    $(".zion-sidemenu-column2, .offcanvas-overlay").addClass("active");
     event.preventDefault(e);
   });
   $(".zion-sidemenu-close, .offcanvas-overlay").on("click", function () {
-    $(".zion-sidemenu-column, .offcanvas-overlay").removeClass("active");
+    $(".zion-sidemenu-column2, .offcanvas-overlay").removeClass("active");
   });
 
   // img expand
@@ -325,16 +329,14 @@
   });
   var t_slider = $('.zion-t-slider-init2');
   if (t_slider.is_exist()) {
-    t_slider.slick({
+    t_slider.slick(_defineProperty(_defineProperty(_defineProperty({
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: false,
       arrows: false,
       dots: true,
-      infinite: false,
-      speed: 1000,
-      lazyLoad: 'progressive'
-    });
+      infinite: true
+    }, "autoplay", true), "speed", 1000), "lazyLoad", 'progressive'));
   }
 
   /*===========================================
