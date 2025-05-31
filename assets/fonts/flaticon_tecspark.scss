@@ -1,16 +1,16 @@
-$flaticon_luminix-font: "flaticon_luminix";
+$flaticon_zion-font: "flaticon_zion";
 
 @font-face {
-    font-family: $flaticon_luminix-font;
-    src: url("./flaticon_luminix.woff2?1af72611aeacce1e3d034c502313dfa7") format("woff2"),
-url("./flaticon_luminix.woff?1af72611aeacce1e3d034c502313dfa7") format("woff"),
-url("./flaticon_luminix.eot?1af72611aeacce1e3d034c502313dfa7#iefix") format("embedded-opentype"),
-url("./flaticon_luminix.ttf?1af72611aeacce1e3d034c502313dfa7") format("truetype"),
-url("./flaticon_luminix.svg?1af72611aeacce1e3d034c502313dfa7#flaticon_luminix") format("svg");
+    font-family: $flaticon_zion-font;
+    src: url("./flaticon_zion.woff2?1af72611aeacce1e3d034c502313dfa7") format("woff2"),
+url("./flaticon_zion.woff?1af72611aeacce1e3d034c502313dfa7") format("woff"),
+url("./flaticon_zion.eot?1af72611aeacce1e3d034c502313dfa7#iefix") format("embedded-opentype"),
+url("./flaticon_zion.ttf?1af72611aeacce1e3d034c502313dfa7") format("truetype"),
+url("./flaticon_zion.svg?1af72611aeacce1e3d034c502313dfa7#flaticon_zion") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
-    font-family: flaticon_luminix !important;
+    font-family: flaticon_zion !important;
     font-style: normal;
     font-weight: normal !important;
     font-variant: normal;
@@ -20,7 +20,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-$flaticon_luminix-map: (
+$flaticon_zion-map: (
     "gear": "\f101",
     "customer-support": "\f102",
     "money-bag": "\f103",
@@ -37,41 +37,41 @@ $flaticon_luminix-map: (
 );
 
 .flaticon-gear:before {
-    content: map-get($flaticon_luminix-map, "gear");
+    content: map-get($flaticon_zion-map, "gear");
 }
 .flaticon-customer-support:before {
-    content: map-get($flaticon_luminix-map, "customer-support");
+    content: map-get($flaticon_zion-map, "customer-support");
 }
 .flaticon-money-bag:before {
-    content: map-get($flaticon_luminix-map, "money-bag");
+    content: map-get($flaticon_zion-map, "money-bag");
 }
 .flaticon-developer:before {
-    content: map-get($flaticon_luminix-map, "developer");
+    content: map-get($flaticon_zion-map, "developer");
 }
 .flaticon-password:before {
-    content: map-get($flaticon_luminix-map, "password");
+    content: map-get($flaticon_zion-map, "password");
 }
 .flaticon-megaphone:before {
-    content: map-get($flaticon_luminix-map, "megaphone");
+    content: map-get($flaticon_zion-map, "megaphone");
 }
 .flaticon-vector:before {
-    content: map-get($flaticon_luminix-map, "vector");
+    content: map-get($flaticon_zion-map, "vector");
 }
 .flaticon-data:before {
-    content: map-get($flaticon_luminix-map, "data");
+    content: map-get($flaticon_zion-map, "data");
 }
 .flaticon-wrench:before {
-    content: map-get($flaticon_luminix-map, "wrench");
+    content: map-get($flaticon_zion-map, "wrench");
 }
 .flaticon-briefcase:before {
-    content: map-get($flaticon_luminix-map, "briefcase");
+    content: map-get($flaticon_zion-map, "briefcase");
 }
 .flaticon-like:before {
-    content: map-get($flaticon_luminix-map, "like");
+    content: map-get($flaticon_zion-map, "like");
 }
 .flaticon-trophy:before {
-    content: map-get($flaticon_luminix-map, "trophy");
+    content: map-get($flaticon_zion-map, "trophy");
 }
 .flaticon-user:before {
-    content: map-get($flaticon_luminix-map, "user");
+    content: map-get($flaticon_zion-map, "user");
 }

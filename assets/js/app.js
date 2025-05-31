@@ -278,6 +278,31 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   wow.init();
 
   /*--------------------------------------------------------------
+  ZION PORTFOLIO JS INIT
+  --------------------------------------------------------------*/
+
+  var i_slider_data = $('.zion-portfolio-slider-js-init');
+  if (i_slider_data.is_exist()) {
+    i_slider_data.slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 3000,
+      infinite: true,
+      arrows: false,
+      pauseOnHover: false,
+      cssEase: 'linear',
+      responsive: [{
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2
+        }
+      }]
+    });
+  }
+
+  /*--------------------------------------------------------------
   TEKUP MENU SIDEBAR JS INIT
   --------------------------------------------------------------*/
   $(".zion-header-barger").on("click", function (e) {
@@ -337,6 +362,138 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       dots: true,
       infinite: true
     }, "autoplay", true), "speed", 1000), "lazyLoad", 'progressive'));
+  }
+
+  /*--------------------------------------------------------------
+  zion MAP JS
+  ------------------------------------------------------------*/
+  var google_map = $('#map');
+  if (google_map.is_exist()) {
+    var init = function init() {
+      var mapOptions = {
+        zoom: 11,
+        scrollwheel: false,
+        navigationControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        draggable: true,
+        disableDefaultUI: true,
+        center: new google.maps.LatLng(40.6700, -73.9400),
+        styles: [{
+          "featureType": "landscape.man_made",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#f7f1df"
+          }]
+        }, {
+          "featureType": "landscape.natural",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#d0e3b4"
+          }]
+        }, {
+          "featureType": "landscape.natural.terrain",
+          "elementType": "geometry",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "poi.business",
+          "elementType": "all",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "poi.medical",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#fbd3da"
+          }]
+        }, {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#bde6ab"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#ffe15f"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "color": "#efd151"
+          }]
+        }, {
+          "featureType": "road.arterial",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#ffffff"
+          }]
+        }, {
+          "featureType": "road.local",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "black"
+          }]
+        }, {
+          "featureType": "transit.station.airport",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#cfb2db"
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#a2daf2"
+          }]
+        }]
+      };
+      var mapElement = document.getElementById('map');
+      var map = new google.maps.Map(mapElement, mapOptions);
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(40.6700, -73.9400),
+        map: map,
+        // icon: 'assets/images/all-img/contact/map.png',
+        title: 'zion'
+      });
+      var contentString = '<div id="content">' + '<div id="tpw">' + '<h3>zion' + '</div>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 280
+      });
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+      setTimeout(function () {
+        marker.setAnimation(null);
+      }, 750); //time it takes for one bounce   
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+      });
+    };
+    google.maps.event.addDomListener(window, 'load', init);
   }
 
   /*===========================================
