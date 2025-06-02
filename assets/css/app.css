@@ -2132,17 +2132,14 @@ a.light-color {
   }
 }
 .zion-p-thumb {
-  visibility: hidden;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
   margin-bottom: 24px;
 }
 .zion-p-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
   transform-origin: left;
 }
 .zion-p-title p {
@@ -2163,7 +2160,7 @@ a.light-color {
   width: 0;
   height: 1px;
   position: absolute;
-  transition: all 0.4s;
+  transition: all 0.2s;
   background: var(--heading-color);
 }
 .zion-p-meta ul li {
@@ -2783,11 +2780,19 @@ a.light-color {
 .zion-blog-wrap:hover .zion-blog-title h3 {
   background-size: 100% 1px;
 }
+.zion-blog-wrap:hover .zion-blog-thumb img {
+  transform: scale(1.1);
+}
 .zion-blog-thumb {
   flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .zion-blog-thumb img {
   border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.4s;
 }
 .zion-blog-meta {
   padding: 24px 0;
@@ -3166,6 +3171,8 @@ a.light-color {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  z-index: 0;
 }
 .zion-hero-thumb img {
   border-radius: 10px;
@@ -3279,6 +3286,14 @@ a.light-color {
   margin: 0 auto;
   position: relative;
   z-index: 0;
+}
+
+.hero-thumb1 {
+  transform: rotate(-5deg) !important;
+}
+
+.hero-thumb3 {
+  transform: rotate(5deg) !important;
 }
 
 img.thumb1 {
@@ -3399,6 +3414,35 @@ img.thumb2 {
 .zion-about-content3 {
   position: relative;
 }
+.zion-about-thumb-wraper {
+  z-index: 1;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300vh;
+  display: flex;
+  position: relative;
+}
+.zion-about-thumb2 {
+  perspective: 1200px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  display: flex;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  transform: perspective(1200px);
+}
+.zion-about-content4 {
+  position: absolute;
+  max-width: 1050px;
+  text-align: center;
+  top: 25%;
+}
 .zion-about-content2 {
   padding: 130px 0;
 }
@@ -3481,6 +3525,13 @@ img.thumb2 {
   .zion-about-content3 {
     padding: 60px 0 0;
   }
+}
+
+.about-img {
+  z-index: 2;
+  position: absolute;
+  inset: auto;
+  border-radius: 10px;
 }
 
 .pt-130 {
@@ -4616,7 +4667,7 @@ a.zion-default-btn.sm-size {
   top: 0;
   bottom: 0;
   z-index: 9999;
-  background-color: var(--heading-color);
+  background-color: var(--accent-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4638,7 +4689,7 @@ a.zion-default-btn.sm-size {
   border: 4px solid transparent;
   border-radius: 50%;
   animation: preloader 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #E1DCCC transparent transparent transparent;
+  border-color: var(--heading-color) transparent transparent transparent;
 }
 
 .preloader-inner span:nth-child(1) {
