@@ -175,7 +175,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     prevArrow: $('.slick-prev'),
     nextArrow: $('.slick-next'),
     responsive: [{
-      breakpoint: 991,
+      breakpoint: 1199,
       settings: {
         slidesToShow: 2
       }
