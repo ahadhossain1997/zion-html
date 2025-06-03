@@ -1351,19 +1351,6 @@ a.light-color {
   visibility: visible;
 }
 
-.zion-footer-section {
-  padding-top: 130px;
-}
-@media (max-width: 991px) {
-  .zion-footer-section {
-    padding-top: 100px;
-  }
-}
-@media (max-width: 767px) {
-  .zion-footer-section {
-    padding-top: 80px;
-  }
-}
 @media (max-width: 1199px) {
   .zion-footer-textarea {
     max-width: 60%;
@@ -1391,6 +1378,24 @@ a.light-color {
   .zion-footer-menu-wraper {
     padding-top: 30px;
     display: block;
+  }
+}
+.zion-footer-top {
+  padding-top: 100px;
+}
+@media (max-width: 991px) {
+  .zion-footer-top {
+    padding-top: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .zion-footer-top {
+    padding-top: 380px;
+  }
+}
+@media (max-width: 767px) {
+  .zion-footer-top.top2 {
+    padding-top: 60px;
   }
 }
 .zion-footer-menu h4 {
@@ -1492,6 +1497,11 @@ a.light-color {
   .zion-footer-logo {
     padding-bottom: 15px;
   }
+}
+
+.footer-sticky {
+  position: sticky;
+  bottom: 0;
 }
 
 /*1.2 components css*/
@@ -1927,6 +1937,11 @@ a.light-color {
     align-items: center;
   }
 }
+@media (max-width: 767px) {
+  .zion-counter-box {
+    align-items: start;
+  }
+}
 .zion-counter-area {
   padding: 80px 0;
 }
@@ -2106,7 +2121,7 @@ a.light-color {
     margin-bottom: 30px;
   }
 }
-.zion-p-wrap:hover .zion-p-thumbb img {
+.zion-p-wrap:hover .zion-p-thumb img {
   transform: scale(1.1);
 }
 .zion-p-wrap:hover .zion-p-meta::before {
@@ -2135,11 +2150,14 @@ a.light-color {
   position: relative;
   overflow: hidden;
   margin-bottom: 24px;
+  border-radius: 10px;
 }
 .zion-p-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.4s;
+  border-radius: 10px;
   transform-origin: left;
 }
 .zion-p-title p {
@@ -2778,7 +2796,7 @@ a.light-color {
   transition: all 0.4s;
 }
 .zion-blog-wrap:hover .zion-blog-title h3 {
-  background-size: 100% 1px;
+  background-size: 100% 2px;
 }
 .zion-blog-wrap:hover .zion-blog-thumb img {
   transform: scale(1.1);
@@ -2796,6 +2814,9 @@ a.light-color {
 }
 .zion-blog-meta {
   padding: 24px 0;
+}
+.zion-blog-meta ul li {
+  display: inline-block;
 }
 .zion-blog-meta ul li a {
   color: var(--heading-color);
@@ -2844,7 +2865,7 @@ a.light-color {
   transform: scale(1.1);
 }
 .zion-blog-wrap2:hover .zion-blog-title2 h3 {
-  background-size: 100% 1px;
+  background-size: 100% 2px;
 }
 .zion-blog-thumb2 {
   flex-shrink: 0;
@@ -3709,6 +3730,8 @@ textarea::placeholder {
 
 .zion-cta-section {
   padding: 100px 0;
+  position: relative;
+  z-index: 9;
 }
 @media (max-width: 991px) {
   .zion-cta-section {
