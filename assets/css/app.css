@@ -3051,8 +3051,6 @@ a.light-color {
 }
 .zion-service-main-box {
   padding: 30px;
-  position: sticky;
-  top: 100px;
   border-radius: 10px;
   background-color: var(--white-color);
 }
