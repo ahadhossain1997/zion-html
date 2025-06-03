@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
   <link rel="stylesheet" href="assets/css/skn8ash.css">
   <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="assets/css/remixicon.css">
@@ -266,14 +267,20 @@
         <h1 class="wow img-custom-anim-right" data-wow-duration="1.7s" data-wow-delay="0.3s">brand—we convert</h1>
       </div>
       <div class="zion-hero-thumb">
-        <div class="hero-thumb1">
-          <img src="assets/images/hero/thumb1.png" alt="hero thumb">
+        <div class="hero-thumb-item" data-aos="fade-left" data-sos-delay="0.8s">
+          <div class="hero-thumb1">
+            <img src="assets/images/hero/thumb1.png" alt="hero thumb">
+          </div>
         </div>
-        <div class="hero-thumb2">
-          <img src="assets/images/hero/thumb2.png" alt="hero thumb">
+        <div class="hero-thumb-item">
+          <div class="hero-thumb">
+            <img src="assets/images/hero/thumb2.png" alt="hero thumb">
+          </div>
         </div>
-        <div class="hero-thumb3">
-          <img src="assets/images/hero/thumb3.png" alt="hero thumb">
+        <div class="hero-thumb-item" data-aos="fade-right" data-aos-delay="0.8s">
+          <div class="hero-thumb3">
+            <img src="assets/images/hero/thumb3.png" alt="hero thumb">
+          </div>
         </div>
       </div>
       <div class="zion-about-content">
@@ -285,7 +292,7 @@
           </div>
           <div class="col-lg-6">
             <div class="zion-about-content-data">
-              <h3>We're a team of creators and builders crafting memorable brands and digital experiences. Whether starting fresh or scaling up, we transform your vision into bold creativity.</h3>
+              <h3 class="move-anim" data-duration="0.01">We're a team of creators and builders crafting memorable brands and digital experiences. Whether starting fresh or scaling up, we transform your vision into bold creativity.</h3>
               <div class="mt-50">
                 <a class="zion-default-btn" href="#">Learn more about us
                   <span class="zion-button-icon">
@@ -349,7 +356,7 @@
               <p>What we do for you</p>
             </div>
             <h2>Our services</h2>
-            <p>We blend creativity and strategy to deliver our services to meet the needs of our clients.</p>
+            <p class="move-anim" data-duration="0.01">We blend creativity and strategy to deliver our services to meet the needs of our clients.</p>
           </div>
         </div>
         <div class="col-lg-6">
@@ -1149,8 +1156,13 @@
   <script src="assets/js/menu/menu.js"></script>
   <script src="assets/js/slick.js"></script>
   <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/aos.js"></script>
   <script src="assets/js/modernizr.min.js"></script>
   <script src="assets/js/faq.js"></script>
+  <script src="assets/js/gsap.js"></script>
+  <script src="assets/js/gsap-scroll-smoother.js"></script>
+  <script src="assets/js/gsap-scroll-trigger.js"></script>
+  <script src="assets/js/gsap-split-text.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyArZVfNvjnLNwJZlLJKuOiWHZ6vtQzzb1Y"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/odometer.min.js"></script>

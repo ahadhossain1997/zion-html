@@ -212,6 +212,53 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*--------------------------------------------------------------
+  ZION AOS ANIMATION JS INIT
+  --------------------------------------------------------------*/
+
+  AOS.init({
+    once: true // Ensure animations can trigger multiple times
+  });
+
+  /////////////////////////////////////////////////////
+  var text_animation = gsap.utils.toArray(".move-anim");
+  if (text_animation) {
+    text_animation.forEach(function (splitTextLine) {
+      var delay_value = 0.1;
+      if (splitTextLine.getAttribute("data-delay")) {
+        delay_value = splitTextLine.getAttribute("data-delay");
+      }
+      var tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: splitTextLine,
+          start: "top 85%",
+          duration: 1.3,
+          scrub: false,
+          markers: false,
+          toggleActions: "play none none none"
+        }
+      });
+      var itemSplitted = new SplitText(splitTextLine, {
+        type: "lines"
+      });
+      gsap.set(splitTextLine, {
+        perspective: 400
+      });
+      itemSplitted.split({
+        type: "lines"
+      });
+      tl.from(itemSplitted.lines, {
+        duration: 1,
+        delay: delay_value,
+        opacity: 0,
+        rotationX: -80,
+        force3D: true,
+        transformOrigin: "top center -50",
+        stagger: 0.1
+      });
+    });
+  }
+
+  /*--------------------------------------------------------------
   ZION BRAND JS INIT
   --------------------------------------------------------------*/
 
