@@ -2945,6 +2945,9 @@ a.light-color {
   }
 }
 
+.zion-service-wrap {
+  position: relative;
+}
 .zion-service-item {
   transition: all 0.4s;
   padding-bottom: 24px;
@@ -3118,79 +3121,32 @@ a.light-color {
   }
 }
 
-.zion-awards-box {
-  position: relative;
-  align-items: center;
-  -webkit-transition: padding 0.4s ease-in-out;
-  -moz-transition: padding 0.4s ease-in-out;
-  -o-transition: padding 0.4s ease-in-out;
-  -ms-transition: padding 0.4s ease-in-out;
-  transition: padding 0.4s ease-in-out;
-  z-index: 0;
-}
-
-.zion-awards-box::before {
+.zion-image-reveal-item.zion-hover-reveal-item .zion-hover-reveal-bg {
   position: absolute;
-  content: "";
-  left: 0;
   top: 0;
-  height: 100%;
-  width: 100%;
+  left: 0;
+  width: 416px;
+  height: 288px;
+  opacity: 0;
+  margin: -150px 0 0 -150px;
+  overflow: hidden;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s;
+  background-repeat: no-repeat;
   border-radius: 10px;
-  background-color: var(--heading-color);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition-property: transform;
-  -moz-transition-property: transform;
-  -ms-transition-property: transform;
-  -o-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform: scaleY(0);
-  -ms-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: top;
-  -moz-transform-origin: top;
-  -ms-transform-origin: top;
-  -o-transform-origin: top;
-  transform-origin: top;
-  z-index: -1;
 }
-
-.zion-awards-box .awards-title {
-  text-align: start;
-}
-
-@media only screen and (max-width: 767.98px) {
-  .zion-awards-box .awards-title {
-    text-align: center;
+@media (max-width: 767px) {
+  .zion-image-reveal-item.zion-hover-reveal-item .zion-hover-reveal-bg {
+    width: 300px;
+    height: 250px;
   }
 }
-.zion-awards-box .awards-info {
-  font-size: 18px;
-  line-height: 144.444%;
-}
 
-.zion-awards-box:hover {
-  padding-inline: 15px;
-}
-
-.zion-awards-box:hover::before {
-  -webkit-transform-origin: bottom;
-  -moz-transform-origin: bottom;
-  -ms-transform-origin: bottom;
-  -o-transform-origin: bottom;
-  transform-origin: bottom;
-  -webkit-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  transform: scaleY(1);
-}
-
-.zion-awards-box:hover .awards-title,
-.zion-awards-box:hover .awards-info {
-  color: var(--white-color);
+.zion-image-reveal-item:hover .zion-hover-reveal-bg {
+  opacity: 1;
+  z-index: 1;
 }
 
 .zion-hero-content {

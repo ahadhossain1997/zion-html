@@ -187,6 +187,22 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }]
   });
 
+  // hover reveal start
+  var hoverItem = document.querySelectorAll(".zion-hover-reveal-item");
+  function moveImage(e, hoverItem, index) {
+    var item = hoverItem.getBoundingClientRect();
+    var x = e.clientX - item.x;
+    var y = e.clientY - item.y;
+    if (hoverItem.children[index]) {
+      hoverItem.children[index].style.transform = "translate(".concat(x, "px, ").concat(y, "px)");
+    }
+  }
+  hoverItem.forEach(function (item, i) {
+    item.addEventListener("mousemove", function (e) {
+      setInterval(moveImage(e, item, 1), 50);
+    });
+  });
+
   /*--------------------------------------------------------------
   ZION AOS ANIMATION JS INIT
   --------------------------------------------------------------*/
