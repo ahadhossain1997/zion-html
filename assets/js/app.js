@@ -535,7 +535,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     loop: true,
     slidesPerView: 2,
     centeredSlides: true,
-    autoplay: false,
+    autoplay: true,
     speed: 2000,
     effect: 'coverflow',
     coverflow: {
