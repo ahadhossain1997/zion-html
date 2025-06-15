@@ -496,6 +496,57 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     google.maps.event.addDomListener(window, 'load', init);
   }
 
+  // add thumb anim
+
+  var ThumbLeftAnimi = document.querySelectorAll(".thumb-anim-left");
+  function animate() {
+    console.log(window.innerHeight, ThumbLeftAnimi[0].getBoundingClientRect().bottom);
+    for (var i = 0; i < ThumbLeftAnimi.length; i++) {
+      var img = ThumbLeftAnimi[i];
+      var top = img.getBoundingClientRect().top;
+      var bottom = img.getBoundingClientRect().bottom;
+      var winH = window.innerHeight;
+      if (winH > top && bottom > 0) {
+        img.style.cssText += "transform: rotate(".concat(top * 0.03, "deg) translateX(-0%);");
+      }
+    }
+  }
+  window.addEventListener("scroll", animate);
+  var ThumbRightAnimi = document.querySelectorAll(".thumb-anim-right");
+  function animate2() {
+    console.log(window.innerHeight, ThumbRightAnimi[0].getBoundingClientRect().bottom);
+    for (var i = 0; i < ThumbRightAnimi.length; i++) {
+      var img = ThumbRightAnimi[i];
+      var top = img.getBoundingClientRect().top;
+      var bottom = img.getBoundingClientRect().bottom;
+      var winH = window.innerHeight;
+      if (winH > top && bottom > 0) {
+        img.style.cssText += "transform: rotate(".concat(top * -0.03, "deg) translateX(-0%);");
+      }
+    }
+  }
+  window.addEventListener("scroll", animate2);
+
+  /*===========================================
+      =    END IMAGE SCROLL ROTATE JS INIT      =
+  =============================================*/
+
+  var mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 2,
+    centeredSlides: true,
+    autoplay: false,
+    speed: 2000,
+    effect: 'coverflow',
+    coverflow: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      modifier: 3,
+      slideShadows: true
+    }
+  });
+
   /*===========================================
       =    Preloader      =
   =============================================*/
