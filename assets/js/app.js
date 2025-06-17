@@ -500,19 +500,25 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       =    END IMAGE SCROLL ROTATE JS INIT      =
   =============================================*/
 
-  var mySwiper = new Swiper('.swiper-container', {
-    loop: true,
-    slidesPerView: 3,
-    centeredSlides: true,
-    autoplay: false,
-    speed: 2000,
+  var swiper = new Swiper('.zion-about-thumb-slider', {
     effect: 'coverflow',
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    initialSlide: 3,
+    keyboardControl: true,
+    mousewheelControl: true,
+    lazyLoading: true,
+    preventClicks: false,
+    preventClicksPropagation: false,
+    lazyLoadingInPrevNext: true,
+    infinite: true,
     coverflow: {
       rotate: 0,
-      stretch: 0,
-      depth: 180,
-      modifier: 2,
-      slideShadows: true
+      stretch: 3,
+      depth: 600,
+      modifier: 1,
+      slideShadows: false
     }
   });
 

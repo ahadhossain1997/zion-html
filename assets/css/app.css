@@ -3720,18 +3720,15 @@ span.zion-title.title2 {
   }
 }
 
-.swiper-container {
-  height: 400px;
-}
-@media (max-width: 767px) {
-  .swiper-container {
-    height: 250px;
-  }
+.zion-about-thumb-slider {
+  height: 415px;
 }
 
-.swiper-wrapper img {
-  margin: 0 12px;
-  border-radius: 10px;
+.swiper-wrapper {
+  align-items: center;
+}
+.swiper-wrapper .swiper-slide {
+  border-radius: 10px !important;
 }
 
 input[type=text],
