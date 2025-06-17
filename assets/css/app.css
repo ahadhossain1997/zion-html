@@ -1286,7 +1286,7 @@ a.white-color {
   visibility: visible;
 }
 
-.header-close-btn p {
+.header-close-btn span {
   font-size: 18px;
   line-height: 1.44em;
   font-weight: 700;
@@ -2658,14 +2658,15 @@ a.white-color {
 .zion-pricing-body-text {
   padding-top: 24px;
 }
-.zion-pricing-body-text ul li {
+.zion-pricing-body-text p {
   position: static;
   padding: 0;
   padding-bottom: 15px;
+  margin: 0;
   font-size: 18px;
   line-height: 1.44em;
 }
-.zion-pricing-body-text ul li span {
+.zion-pricing-body-text p span {
   font-weight: 700;
   padding-right: 15px;
 }
@@ -2694,14 +2695,29 @@ a.white-color {
 .zion-team-content {
   padding: 30px;
 }
+@media (max-width: 767px) {
+  .zion-team-content {
+    padding: 18px;
+  }
+}
 .zion-team-content h4 {
   padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .zion-team-content h4 {
+    padding-bottom: 5px;
+  }
 }
 .zion-team-content p {
   color: var(--heading-color);
 }
 .zion-team-content.content2 {
   padding: 30px 13px;
+}
+@media (max-width: 767px) {
+  .zion-team-content.content2 {
+    padding: 18px 12px;
+  }
 }
 .zion-team-wraper {
   display: flex;
@@ -3256,10 +3272,15 @@ a.white-color {
 .zion-hero-thumb img {
   border-radius: 10px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1399px) {
   .zion-hero-thumb {
     padding: 60px 0 40px 0;
     gap: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .zion-hero-thumb {
+    padding: 60px 0 40px 0;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -3394,7 +3415,7 @@ a.white-color {
 .hero-thumb1 {
   transform: rotate(-5deg) !important;
 }
-@media (max-width: 991px) {
+@media (max-width: 1399px) {
   .hero-thumb1 {
     transform: rotate(0) !important;
   }
@@ -3402,6 +3423,11 @@ a.white-color {
 
 .hero-thumb3 {
   transform: rotate(5deg) !important;
+}
+@media (max-width: 1399px) {
+  .hero-thumb3 {
+    transform: rotate(0) !important;
+  }
 }
 
 .hero-thumb {
@@ -3594,11 +3620,6 @@ img.thumb2 {
     padding-right: 0;
   }
 }
-.zion-about-hero-thumb img {
-  height: 400px;
-  width: 450px !important;
-  border-radius: 10px;
-}
 .zion-about-section1 {
   padding: 210px 0 130px;
 }
@@ -3614,6 +3635,11 @@ img.thumb2 {
 }
 .zion-about-hero-thumb img {
   border-radius: 10px;
+}
+@media (max-width: 767px) {
+  .zion-about-hero-thumb.thumb2 {
+    padding-bottom: 24px;
+  }
 }
 .zion-about-content3 {
   padding: 80px 0 0;
