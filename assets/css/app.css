@@ -1492,10 +1492,18 @@ a.white-color {
 }
 
 .zion-iconbox-wrap {
-  padding: 30px 20px;
+  padding: 30px;
   border-radius: 10px;
   margin-bottom: 24px;
   background-color: var(--light-bg);
+}
+.zion-iconbox-wrap.wrap2 {
+  background-color: var(--heading-bg);
+}
+@media (max-width: 767px) {
+  .zion-iconbox-wrap {
+    padding: 24px;
+  }
 }
 .zion-iconbox-icon {
   padding-bottom: 100px;
@@ -1507,7 +1515,20 @@ a.white-color {
 }
 @media (max-width: 767px) {
   .zion-iconbox-icon {
-    padding-bottom: 60px;
+    padding-bottom: 40px;
+  }
+}
+.zion-iconbox-icon.icon2 {
+  padding-bottom: 195px;
+}
+@media (max-width: 991px) {
+  .zion-iconbox-icon.icon2 {
+    padding-bottom: 130px;
+  }
+}
+@media (max-width: 767px) {
+  .zion-iconbox-icon.icon2 {
+    padding-bottom: 80px;
   }
 }
 .zion-iconbox-content h3 {
@@ -1516,6 +1537,9 @@ a.white-color {
 .zion-iconbox-content p {
   font-size: 20px;
   line-height: 1.5em;
+}
+.zion-iconbox-content.content2 h3, .zion-iconbox-content.content2 p {
+  color: var(--white-color);
 }
 
 .zion-contact-box {
@@ -3534,23 +3558,6 @@ img.thumb2 {
 .zion-about-content3 {
   position: relative;
 }
-.zion-about-thumb-wraper {
-  z-index: 1;
-  justify-content: center;
-  align-items: flex-start;
-  display: flex;
-  position: relative;
-}
-.zion-about-thumb2 {
-  perspective: 1200px;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-}
 .zion-about-content4 {
   position: absolute;
   max-width: 1050px;
@@ -3650,13 +3657,6 @@ img.thumb2 {
   }
 }
 
-.about-img {
-  z-index: 2;
-  position: absolute;
-  inset: auto;
-  border-radius: 10px;
-}
-
 .pt-130 {
   padding-top: 130px;
 }
@@ -3729,6 +3729,49 @@ span.zion-title.title2 {
 }
 .swiper-wrapper .swiper-slide {
   border-radius: 10px !important;
+}
+
+/* Main Animation Section */
+.zion-about-animation-wraper {
+  position: relative;
+  width: 100%;
+  height: 250vh;
+}
+
+.zion-about-animation-wrap {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.pin-spacer {
+  height: 8vh !important;
+  position: relative;
+  z-index: -3;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The animated images */
+.animated-image {
+  position: absolute;
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  /* All images start at the center */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 input[type=text],
@@ -4162,7 +4205,6 @@ img.cta-thumb2 {
   color: var(--white-color);
 }
 .zion-default-content.team3 {
-  padding: 130px 0;
   position: sticky;
   top: 100px;
 }

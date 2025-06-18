@@ -10,18 +10,27 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
    [Table of contents]
   
-  zion PRELOADER JS INIT
-  zion HEADER TRIGER JS INIT
-  zion HEADER STICKY MENU JS INIT
-  zion MENU SIDEBAR JS INIT
-  zion PROGRES CIRCLE JS INIT
-  zion TSTIMONIAL SLIDER INIT
-  zion PORTFOLIO MASONAY FILTER JS
-  zion TAB CONTENT JS
-  zion TOGGLE PASSOWRD JS INIT
+  ZION HEADER TRIGER JS INIT
+  ZION HEADER STICKY MENU JS INIT
+  ZION PRELOADER JS INIT
+  ZION PROGRES CIRCLE JS INIT
+  ZION CTA SLIDER JS INIT
+  ZION CTA SLIDER JS INIT2
+  ZION TESTIMONIAL JS INIT
+  ZION HOVER REVEAL START JS INIT
+  ZION AOS ANIMATION JS INIT
+  ZION BRAND JS INIT
+  ZION BRAND JS INIT2
+  ZION TAB SLIDER JS INIT
+  ZION PORTFOLIO JS INIT
+  ZION MENU SIDEBAR JS INIT
+  ZION IMAGE EXPAND JS INIT
+  ZION TESTIMONA JS INIT2
+  ZION MAP JS INIT
+  END IMAGE SCROLL ROTATE JS INIT
+  ZION GSAP IMAGE ANIMATION JS INIT
   
-  -------------------------------------------------------------------*/
-
+  
   /*--------------------------------------------------------------
   CUSTOM PRE DEFINE FUNCTION
   ------------------------------------------------------------*/
@@ -76,7 +85,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   });
 
   /*--------------------------------------------------------------
-  zion PROGRES CIRCLE JS INIT
+  ZION PROGRES CIRCLE JS INIT
   --------------------------------------------------------------*/
 
   var progressPath = document.querySelector('.progress-wrap path');
@@ -110,10 +119,9 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }, duration);
     return false;
   });
-
   /*--------------------------------------------------------------
-   ZION CTA SLIDER JS INIT
-   --------------------------------------------------------------*/
+  ZION CTA SLIDER JS INIT
+  --------------------------------------------------------------*/
   var t_slider = $('.zion-cta-slider-init');
   if (t_slider.is_exist()) {
     t_slider.slick({
@@ -138,9 +146,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }]
     });
   }
-
   /*--------------------------------------------------------------
-  ZION CTA SLIDER JS INIT
+  ZION CTA SLIDER JS INIT2
   --------------------------------------------------------------*/
   var t_slider2 = $('.zion-cta-slider-init2');
   if (t_slider2.is_exist()) {
@@ -167,6 +174,10 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }]
     });
   }
+
+  /*--------------------------------------------------------------
+  ZION TESTIMONIAL JS INIT
+  --------------------------------------------------------------*/
   var $carousel = $('.slick-slide-active').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -187,7 +198,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }]
   });
 
-  // hover reveal start
+  // ZION HOVER REVEAL START JS INIT
   var hoverItem = document.querySelectorAll(".zion-hover-reveal-item");
   function moveImage(e, hoverItem, index) {
     var item = hoverItem.getBoundingClientRect();
@@ -206,7 +217,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   /*--------------------------------------------------------------
   ZION AOS ANIMATION JS INIT
   --------------------------------------------------------------*/
-
   AOS.init({
     once: true // Ensure animations can trigger multiple times
   });
@@ -234,16 +244,10 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       }]
     });
   }
+
   /*--------------------------------------------------------------
-  ZION TAB SLIDER JS INIT
+  ZION BRAND JS INIT2
   --------------------------------------------------------------*/
-  $('ul.tabs li').click(function () {
-    var tab_id = $(this).attr('data-tab');
-    $('ul.tabs li').removeClass('current');
-    $('.zion-tab-content').removeClass('current');
-    $(this).addClass('current');
-    $("#" + tab_id).addClass('current');
-  });
   var i_slider_data = $('.zion-brand-slider-js-init2');
   if (i_slider_data.is_exist()) {
     i_slider_data.slick({
@@ -266,16 +270,15 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }
 
   /*--------------------------------------------------------------
-  ZION WOW JS INIT
+  ZION TAB SLIDER JS INIT
   --------------------------------------------------------------*/
-  var wow = new WOW({
-    boxClass: 'wow',
-    animateClass: 'animated',
-    offset: 0,
-    mobile: false,
-    live: true
+  $('ul.tabs li').click(function () {
+    var tab_id = $(this).attr('data-tab');
+    $('ul.tabs li').removeClass('current');
+    $('.zion-tab-content').removeClass('current');
+    $(this).addClass('current');
+    $("#" + tab_id).addClass('current');
   });
-  wow.init();
 
   /*--------------------------------------------------------------
   ZION PORTFOLIO JS INIT
@@ -303,7 +306,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }
 
   /*--------------------------------------------------------------
-  TEKUP MENU SIDEBAR JS INIT
+  ZION MENU SIDEBAR JS INIT
   --------------------------------------------------------------*/
   $(".zion-header-barger").on("click", function (e) {
     $(".zion-sidemenu-column2, .offcanvas-overlay").addClass("active");
@@ -313,7 +316,9 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     $(".zion-sidemenu-column2, .offcanvas-overlay").removeClass("active");
   });
 
-  // img expand
+  /*--------------------------------------------------------------
+  ZION IMAGE EXPAND JS INIT
+  --------------------------------------------------------------*/
 
   var wrappers = document.querySelectorAll(".zion-p-img-expand-wrap");
   var wrapArray = Array.from(wrappers);
@@ -352,6 +357,11 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       scrollInertia: 200
     });
   });
+
+  /*--------------------------------------------------------------
+  ZION TESTIMONA JS INIT2
+  --------------------------------------------------------------*/
+
   var t_slider = $('.zion-t-slider-init2');
   if (t_slider.is_exist()) {
     t_slider.slick(_defineProperty(_defineProperty(_defineProperty({
@@ -365,7 +375,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }
 
   /*--------------------------------------------------------------
-  zion MAP JS
+  ZION MAP JS INIT
   ------------------------------------------------------------*/
   var google_map = $('#map');
   if (google_map.is_exist()) {
@@ -476,7 +486,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       var marker = new google.maps.Marker({
         position: new google.maps.LatLng(40.6700, -73.9400),
         map: map,
-        // icon: 'assets/images/all-img/contact/map.png',
         title: 'zion'
       });
       var contentString = '<div id="content">' + '<div id="tpw">' + '<h3>zion' + '</div>';
@@ -497,7 +506,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }
 
   /*===========================================
-      =    END IMAGE SCROLL ROTATE JS INIT      =
+      = ZION IMAGE SCROLL ROTATE JS INIT      =
   =============================================*/
 
   var swiper = new Swiper('.zion-about-thumb-slider', {
@@ -521,6 +530,47 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
       slideShadows: false
     }
   });
+
+  /*===========================================
+      =    ZION GSAP IMAGE ANIMATION JS INIT      =
+  =============================================*/
+
+  gsap.registerPlugin(ScrollTrigger);
+  var tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".zion-about-animation-wraper",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1
+    }
+  });
+  tl.to("#image-tl", {
+    x: "-90vw",
+    y: "-90vh",
+    rotation: -15
+  }, 0);
+  tl.to("#image-tr", {
+    x: "80vw",
+    y: "-80vh",
+    rotation: 15
+  }, 0);
+  tl.to("#image-bl", {
+    x: "-75vw",
+    y: "80vh",
+    rotation: -15
+  }, 0);
+  tl.to("#image-br", {
+    x: "75vw",
+    y: "80vh",
+    rotation: 15
+  }, 0);
+  tl.from(".text-content", {
+    opacity: 0,
+    scale: 0.8,
+    duration: 0.5
+  }, 0);
 
   /*===========================================
       =    Preloader      =
