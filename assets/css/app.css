@@ -3435,6 +3435,22 @@ a.white-color {
 .zion-hero-thumb3 img {
   border-radius: 10px;
 }
+.zion-hero-thumb4 img {
+  border-radius: 10px;
+}
+
+.animation-container.scroll1 {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.animation-container.scroll2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
 
 .hero-thumb1 {
   transform: rotate(-5deg) !important;
@@ -3457,29 +3473,6 @@ a.white-color {
 .hero-thumb {
   position: relative;
   z-index: 1;
-}
-
-img.thumb1 {
-  position: absolute;
-  top: 0;
-  left: 55px;
-  width: 250px;
-  z-index: -1;
-  transform: rotate(-20deg);
-}
-
-img.thumb2 {
-  position: absolute;
-  bottom: -70px;
-  right: 55px;
-  width: 200px;
-  z-index: -1;
-  transform: rotate(20deg);
-}
-@media (max-width: 1199px) {
-  img.thumb2 {
-    bottom: -20px;
-  }
 }
 
 .margin-30 {
@@ -3566,29 +3559,27 @@ img.thumb2 {
 }
 .zion-about-thumb3 {
   position: relative;
+  text-align: center;
 }
 .zion-about-thumb3 img {
   border-radius: 10px;
   transform: rotate(-15deg);
-  width: 500px;
-}
-.zion-about-thumb3.thumb4 {
-  float: inline-end;
+  width: 60%;
 }
 .zion-about-thumb3.thumb4 img {
   transform: rotate(15deg);
 }
 .zion-about-content2 {
-  padding: 130px 0;
+  padding-bottom: 60px;
 }
 @media (max-width: 991px) {
   .zion-about-content2 {
-    padding: 80px 0px;
+    padding-bottom: 0;
   }
 }
 @media (max-width: 767px) {
   .zion-about-content2 {
-    padding: 60px 0px;
+    padding-bottom: 0;
   }
 }
 .zion-about-thumb {
@@ -3905,28 +3896,18 @@ textarea::placeholder {
   text-align: center;
 }
 
-img.cta-thumb1 {
+.animation-container.scroll3 {
   position: absolute;
-  left: -150px;
   top: 0;
+  left: -15%;
   z-index: -1;
-}
-@media (max-width: 1399px) {
-  img.cta-thumb1 {
-    display: none;
-  }
 }
 
-img.cta-thumb2 {
+.animation-container.scroll4 {
   position: absolute;
-  top: 35%;
-  right: -150px;
+  bottom: 0;
+  right: -10%;
   z-index: -1;
-}
-@media (max-width: 1399px) {
-  img.cta-thumb2 {
-    display: none;
-  }
 }
 
 .zion-cta-slider-init2.slick-initialized.slick-slider {

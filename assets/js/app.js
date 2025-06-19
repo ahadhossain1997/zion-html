@@ -573,6 +573,69 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
   }, 0);
 
   /*===========================================
+      =    ZION IMAGE SCROLL ROTATE JS INIT      =
+  =============================================*/
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".box", {
+    rotation: -15,
+    scrollTrigger: {
+      trigger: ".animation-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true // smooth scroll-link
+    }
+  });
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".box2", {
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".animation-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true // smooth scroll-link
+    }
+  });
+  gsap.to(".box4", {
+    scrollTrigger: {
+      trigger: ".image-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true
+    },
+    rotate: -30
+  });
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".box5", {
+    rotation: 15,
+    scrollTrigger: {
+      trigger: ".animation-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true // smooth scroll-link
+    }
+  });
+  gsap.to(".box6", {
+    rotation: -10,
+    scrollTrigger: {
+      trigger: ".animation-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true // smooth scroll-link
+    }
+  });
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".box7", {
+    rotation: 10,
+    scrollTrigger: {
+      trigger: ".animation-container",
+      start: "top center",
+      end: "bottom center",
+      scrub: true // smooth scroll-link
+    }
+  });
+
+  /*===========================================
       =    Preloader      =
   =============================================*/
   function preloader() {
