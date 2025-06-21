@@ -1242,21 +1242,22 @@ a.white-color {
   padding: 25px 50px;
   background-color: var(--accent-bg);
 }
-@media (max-width: 1399px) {
-  .zion-sidemenu-column2 {
-    width: 400px;
-  }
-}
 @media (max-width: 991px) {
   .zion-sidemenu-column2 {
     padding: 30px;
+    width: 400px;
   }
 }
 
 .zion-sidemenu-column2.active {
-  margin-right: 0px;
+  margin-right: 300px;
   z-index: 9999;
   overflow: scroll;
+}
+@media (max-width: 1199px) {
+  .zion-sidemenu-column2.active {
+    margin-right: 0;
+  }
 }
 
 .header-close-btn span {
@@ -1370,11 +1371,6 @@ a.white-color {
 @media (max-width: 991px) {
   .zion-footer-top {
     padding-top: 80px;
-  }
-}
-@media (max-width: 767px) {
-  .zion-footer-top {
-    padding-top: 380px;
   }
 }
 @media (max-width: 767px) {
@@ -4389,7 +4385,7 @@ textarea::placeholder {
 }
 
 .zion-sub-title {
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 50px;
   display: inline-block;
   margin-bottom: 24px;
@@ -4411,6 +4407,9 @@ textarea::placeholder {
 }
 .zion-sub-title.title2 p {
   color: var(--white-color);
+}
+.zion-sub-title.title3 {
+  background-color: var(--white-bg);
 }
 
 .zion-default-content h2 {
@@ -4783,6 +4782,19 @@ textarea::placeholder {
 .submit-btn.btn2 {
   width: 100%;
   justify-content: center;
+}
+
+.zion-sidemenu-close {
+  position: absolute;
+  right: 40px;
+  top: 25px;
+  cursor: pointer;
+}
+
+.zion-sidemenu-close i {
+  font-size: 40px;
+  color: var(--heading-color);
+  transition: all 0.4s;
 }
 
 .breadcrumb-wrapper {

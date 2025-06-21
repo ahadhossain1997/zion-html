@@ -587,50 +587,52 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
     }
   });
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to(".box2", {
+  gsap.to(".box3", {
     rotation: 15,
     scrollTrigger: {
       trigger: ".animation-container",
       start: "top center",
-      end: "bottom center",
+      end: "left top",
       scrub: true // smooth scroll-link
     }
   });
+  gsap.registerPlugin(ScrollTrigger);
   gsap.to(".box4", {
+    rotation: -30,
     scrollTrigger: {
-      trigger: ".image-container",
+      trigger: ".animation-container",
       start: "top center",
-      end: "bottom center",
-      scrub: true
-    },
-    rotate: -30
+      end: "left top",
+      scrub: true // smooth scroll-link
+    }
   });
   gsap.registerPlugin(ScrollTrigger);
   gsap.to(".box5", {
-    rotation: 15,
+    rotation: 30,
     scrollTrigger: {
       trigger: ".animation-container",
       start: "top center",
-      end: "bottom center",
+      end: "left top",
       scrub: true // smooth scroll-link
     }
   });
+  gsap.registerPlugin(ScrollTrigger);
   gsap.to(".box6", {
-    rotation: -10,
+    rotation: -15,
     scrollTrigger: {
       trigger: ".animation-container",
       start: "top center",
-      end: "bottom center",
+      end: "left top",
       scrub: true // smooth scroll-link
     }
   });
   gsap.registerPlugin(ScrollTrigger);
   gsap.to(".box7", {
-    rotation: 10,
+    rotation: 15,
     scrollTrigger: {
       trigger: ".animation-container",
       start: "top center",
-      end: "bottom center",
+      end: "left top",
       scrub: true // smooth scroll-link
     }
   });
